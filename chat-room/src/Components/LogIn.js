@@ -4,11 +4,15 @@ import { Link } from 'react-router-dom';
 import '../styles/login.scss';
 
 function LogIn() {
+  /***** REFS *****/
+  const userNameInput = useRef('');
+  const passwordInput = useRef('');
+
   const navigate = useNavigate();
 
-  const loginInput = useRef(null);
   const handleClick = () => {
-    console.log(loginInput.current.value);
+    console.log(userNameInput.current.value);
+    console.log(passwordInput.current.value);
     navigate('/chat');
   };
   return (
@@ -28,14 +32,14 @@ function LogIn() {
 
       <div className="login">
         <input
-          ref={loginInput}
+          ref={userNameInput}
           type="text"
           placeholder="username"
           name="user"
           required
         />
         <input
-          ref={loginInput}
+          ref={passwordInput}
           type="password"
           placeholder="Password"
           name="password"
