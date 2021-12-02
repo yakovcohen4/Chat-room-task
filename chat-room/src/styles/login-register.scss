@@ -39,14 +39,14 @@
   z-index: 2;
 }
 
-.header div:not(.register) {
+.header div:not(.link-to) {
   float: left;
   color: #fff;
   font-family: 'Exo', sans-serif;
   font-size: 35px;
   font-weight: 200;
 }
-.header div .register {
+.header div .link-to {
   float: left;
   color: rgb(40, 0, 216);
   font-family: 'Exo', sans-serif;
@@ -57,10 +57,10 @@
     text-decoration: underline;
   }
 }
-.header div span:not(.register) {
+.header div span:not(.link-to) {
   color: #5379fa !important;
 }
-.login {
+.user-input {
   position: absolute;
   top: calc(50% - 75px);
   left: calc(50% - 50px);
@@ -70,7 +70,7 @@
   z-index: 2;
 }
 
-.login input[type='text'] {
+.user-input input[type='text'] {
   width: 250px;
   height: 30px;
   background: transparent;
@@ -82,8 +82,20 @@
   font-weight: 400;
   padding: 4px;
 }
-
-.login input[type='password'] {
+.user-input input[type='email'] {
+  width: 250px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 2px;
+  color: #fff;
+  font-family: 'Exo', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+  margin-top: 10px;
+}
+.user-input input[type='password'] {
   width: 250px;
   height: 30px;
   background: transparent;
@@ -97,7 +109,7 @@
   margin-top: 10px;
 }
 
-.login input[type='button'] {
+.user-input input[type='button'] {
   width: 260px;
   height: 35px;
   background: #fff;
@@ -112,25 +124,30 @@
   margin-top: 10px;
 }
 
-.login input[type='button']:hover {
+.user-input input[type='button']:hover {
   opacity: 0.8;
 }
 
-.login input[type='button']:active {
+.user-input input[type='button']:active {
   opacity: 0.6;
 }
 
-.login input[type='text']:focus {
+.user-input input[type='text']:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type='password']:focus {
+.user-input input[type='email']:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-.login input[type='button']:focus {
+.user-input input[type='password']:focus {
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.user-input input[type='button']:focus {
   outline: none;
 }
 

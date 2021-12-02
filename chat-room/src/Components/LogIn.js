@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import '../styles/login.scss';
+import '../styles/login-register.scss';
 
 function LogIn() {
   /***** REFS *****/
@@ -23,18 +23,18 @@ function LogIn() {
         <div>
           Chat<span>App</span>
         </div>
-        <div className="register">
+        <div className="link-to">
           <Link to={'/register'}>
-            <span className="register">Not a member? create account!</span>
+            <span className="link-to">Not a member? create account!</span>
           </Link>
         </div>
       </div>
 
-      <div className="login">
+      <div className="user-input">
         <input
           ref={userNameInput}
           type="text"
-          placeholder="username"
+          placeholder="Username"
           name="user"
           required
         />
@@ -45,7 +45,7 @@ function LogIn() {
           name="password"
           required
         />
-        <input type="button" value="Login" onClick={handleClick}></input>
+        <input type="button" value="Log In" onClick={handleClick}></input>
       </div>
     </div>
   );
