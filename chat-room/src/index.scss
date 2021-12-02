@@ -24,6 +24,9 @@ body {
 .div1 {
   border: 2px solid black;
   grid-area: 3 / 2 / 8 / 8;
+  &:hover {
+    background-color: rgb(255, 208, 147);
+  }
 }
 .div2 {
   border: 2px solid black;
