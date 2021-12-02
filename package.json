@@ -1,0 +1,33 @@
+{
+  "name": "Chat-room-task",
+  "version": "1.0.0",
+  "description": "1. Create a **login screen** and a **chat screen**\r 2. The **login screen** Will contain an entry form (asking only for username is the minimum requirement - look at the bonus section to see more options).\r 3. The **chat screen** Will contain the chat.\r 4. Use [React-router](https://reactrouter.com/docs/en/v6/getting-started/tutorial 'Tutorial') to enable switching between **login screen** and **chat screen**\r 5. After a user login, an event is sent to the server for initial connection and this message is published to all other participants.\r 6. When a user disconnect the server will send a disconnection event that will inform all participants.",
+  "main": "./server/index.js",
+  "scripts": {
+    "dev": "nodemon ./server/index.js",
+    "start": "node ./server/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yakovcohen4/Chat-room-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yakovcohen4/Chat-room-task/issues"
+  },
+  "homepage": "https://github.com/yakovcohen4/Chat-room-task#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.14",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
