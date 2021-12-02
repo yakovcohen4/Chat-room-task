@@ -5,3 +5,31 @@ body {
   text-align: center;
   background-color: antiquewhite;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parent {
+  display: grid;
+  /* width: 90%;
+  height: 90%; */
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  border: 2px solid black;
+  grid-area: 3 / 2 / 8 / 8;
+}
+.div2 {
+  border: 2px solid black;
+  grid-area: 8 / 2 / 10 / 8;
+}
+.div3 {
+  border: 2px solid black;
+  grid-area: 3 / 8 / 10 / 9;
+}
