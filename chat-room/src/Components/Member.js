@@ -5,7 +5,7 @@ function Member({ name }) {
     <li>
       <div>
         <h3>
-          <span className="status green"></span>
+          <span className="status black"></span>
         </h3>
         <h2>{name}</h2>
       </div>
