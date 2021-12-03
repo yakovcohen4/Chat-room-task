@@ -8,7 +8,7 @@ exports.register = async (req, res, next) => {
     const exists = await User.find({ $or: [{ email }, { userName }] });
 
     if (exists.length > 0) {
-      throw { status: 400, message: 'UserName or email already exists' };
+      throw { status: 409, message: 'Username or email already exists' };
     }
 
     await User.create({
@@ -18,6 +18,23 @@ exports.register = async (req, res, next) => {
     });
 
     res.send('Registered');
+  } catch (err) {
+    // console.log(err.message);
+    next(err);
+  }
+};
+
+// login by -userName and password
+exports.login = async (req, res, next) => {
+  try {
+    const { userName, password } = req.body;
+    const user = await User.find({ userName: userName, password: password });
+
+    if (user.length === 0) {
+      throw { status: 409, message: 'Username or password Incorrect' };
+    }
+
+    res.send('login');
   } catch (err) {
     // console.log(err.message);
     next(err);

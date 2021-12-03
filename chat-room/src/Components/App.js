@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LogIn from './LogIn';
 import Chat from './Chat';
 import Register from './Register';
+export const BASEURL = 'http://localhost:8080';
 
 function App() {
   const [state, setstate] = useState();
