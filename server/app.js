@@ -7,6 +7,7 @@ const app = express();
 
 //Routers
 const usersRouter = require('./routers/userRouter.js');
+const chatRouter = require('./routers/chatRouter.js');
 
 //MiddleWares
 const { errorHandlerMiddleware } = require('./middlewares/errorHandler');
@@ -22,7 +23,8 @@ app.get('/', (req, res) => {
 });
 
 /***** ROUTERS *****/
-app.use('/users', usersRouter); // Register, Login, Logout
+app.use('/users', usersRouter); // Register, Login
+app.use('/chat', chatRouter); // Send Message
 
 app.use(errorHandlerMiddleware);
 
