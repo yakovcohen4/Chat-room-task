@@ -19,10 +19,10 @@ function LogIn() {
     try {
       // TODO ADD VALIDATION
       if (!userName || !password) {
-        throw new Error({
+        throw {
           status: 400,
           message: 'Username or password missing',
-        });
+        };
       }
       const response = await axios.post(`http://localhost:8080/users/login`, {
         userName,
@@ -34,6 +34,7 @@ function LogIn() {
       //   return response; //TODO- ADD SUCCESS MESSAGE
       console.log(response.data);
     } catch (error) {
+      console.log(error);
       console.log(error.message); //TODO- ADD ERROR MESSAGE
       setError(error.message);
     }
