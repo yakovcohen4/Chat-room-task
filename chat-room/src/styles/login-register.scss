@@ -158,3 +158,11 @@
 ::-moz-input-placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
+
+.err-mes {
+  padding: 5px;
+  color: rgb(255, 0, 0);
+  font-size: 20px;
+  background-color: rgba(173, 224, 233, 0.582);
+  border-radius: 10%;
+}
