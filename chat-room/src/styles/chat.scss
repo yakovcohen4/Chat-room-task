@@ -223,14 +223,14 @@ h3 {
 }
 
 .message-input {
-  // font-size: 1em;
-  // margin: 1em auto;
-  padding: 0.25em;
-  // height: 1em;
+  background-color: rgba(255, 99, 71, 0.61);
+  font-size: 1.15em;
+  margin: 0.3em;
+  padding: 0.35em;
   border-radius: 0.5em;
   border-color: #222;
-  color: #222;
-  font-family: 'Didact Gothic';
+  color: rgb(0, 0, 0);
+  font-family: cursive;
 }
 
 .send-btn {
