@@ -10,6 +10,12 @@ function MessageInput({ sendMessage }) {
         className="message-input"
         type="text"
         placeholder="Type a message.."
+        onKeyPress={e => {
+          if (e.key === 'Enter') {
+            sendMessage(contentInput.current.value);
+            contentInput.current.value = '';
+          }
+        }}
       />
       <button
         className="send-btn"
