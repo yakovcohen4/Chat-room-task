@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../styles/login-register.scss';
 import axios from 'axios';
+import Cookies from 'js-cookie';
 
 function LogIn() {
   const [error, setError] = useState();
@@ -28,12 +29,15 @@ function LogIn() {
         userName,
         password: String(password),
       });
+      if (response.data.accessToken && response.data.refreshToken) {
+        Cookies.set('accessToken', response.data.accessToken);
+        Cookies.set('refreshToken', response.data.refreshToken);
+      }
       if (response.status === 200) {
-        // localStorage.setItem('userName', userName);
         sessionStorage.setItem('userName', userName);
         navigate('/chat');
       }
-      //   return response; //TODO- ADD SUCCESS MESSAGE
+      // return response; //TODO- ADD SUCCESS MESSAGE
       console.log(response.data);
     } catch (error) {
       console.log(error);
