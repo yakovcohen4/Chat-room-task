@@ -18,10 +18,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 // app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  res.send('you in');
-});
-
 /***** ROUTERS *****/
 app.use('/users', usersRouter); // Register, Login
 app.use('/chat', chatRouter); // Send Message
