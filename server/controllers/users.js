@@ -1,4 +1,5 @@
 const User = require('../modles/user');
+const jwt = require('jsonwebtoken');
 
 /***** FUNCTIONS ******/
 // Register by -userName, email and password
@@ -27,6 +28,7 @@ exports.register = async (req, res, next) => {
 // login by -userName and password
 exports.login = async (req, res, next) => {
   try {
+    const userForToken = req.body;
     const { userName, password } = req.body;
     const user = await User.find({ userName: userName, password: password });
 
@@ -34,7 +36,20 @@ exports.login = async (req, res, next) => {
       throw { status: 409, message: 'Username or password Incorrect' };
     }
 
-    res.send('login');
+    const tokens = {};
+    tokens.accessToken = jwt.sign(
+      userForToken,
+      process.env.ACCESS_TOKEN_SECRET,
+      {
+        expiresIn: '10s',
+      }
+    );
+    tokens.refreshToken = jwt.sign(
+      userForToken,
+      process.env.REFRESH_ACCESS_TOKEN_SECRET
+    );
+
+    res.send(tokens);
   } catch (err) {
     // console.log(err.message);
     next(err);
