@@ -1,5 +1,4 @@
-import React, { useState, useContext } from 'react';
-// import '../styles/chat.scss';
+import React, { useEffect, useState, useContext } from 'react';
 import '../styles/chat.scss';
 import moment from 'moment';
 import axios from 'axios';
@@ -10,30 +9,23 @@ import MemberList from './MemberList';
 import { UserContext } from './UserContext.js';
 
 function Chat() {
-  const demoData = [
-    { author: 'yakov', message: 'Hello', time: moment().format('LT') },
-    { author: 'ori', message: 'hello to you', time: moment().format('LT') },
-    {
-      author: 'rama',
-      message: 'hello, I am rama',
-      time: moment().format('LT'),
-    },
-    {
-      author: 'ofir',
-      message: 'hello, I am ofir',
-      time: moment().format('LT'),
-    },
-    {
-      author: 'yakov',
-      message: "What's up dear friends",
-      time: moment().format('LT'),
-    },
-  ];
   /* STATES */
   // const { userName } = useContext(UserContext);
-  const userName = 'yakov';
+  const userName = sessionStorage.getItem('userName');
+  console.log(userName);
   const [messages, setMessages] = useState([]);
 
+  /* useEffect */
+  useEffect(() => {
+    let eventSource = new EventSource('http://localhost:8080/chat/get-message');
+    eventSource.onmessage = e =>
+      setMessages(prevMessages => {
+        const messages = JSON.parse(e.data);
+        return messages.length ? messages : [...prevMessages, messages];
+      });
+  }, []);
+
+  /* Function */
   const sendMessage = async content => {
     try {
       console.log(userName, content);
@@ -53,14 +45,14 @@ function Chat() {
   return (
     <div className="chat-room">
       <div className="messages-list">
-        <MessageList chatData={demoData} />
+        <MessageList chatData={messages} />
       </div>
       <div className="message-input">
         <MessageInput sendMessage={sendMessage} />
       </div>
       <div className="members-list">
         <h2>Contact List</h2>
-        <MemberList chatData={demoData} />
+        <MemberList chatData={messages} />
       </div>
     </div>
   );
