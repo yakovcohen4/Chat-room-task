@@ -4,8 +4,13 @@ import Message from './Message';
 function MessageList({ chatData }) {
   return (
     <ul id="chat">
-      {chatData.map(({ author, message, time }) => (
-        <Message message={message} author={author} time={time} key={message} />
+      {chatData.map(({ userName, content, timeStamp }) => (
+        <Message
+          message={content}
+          author={userName}
+          time={timeStamp}
+          key={content + userName + timeStamp}
+        />
       ))}
     </ul>
   );
