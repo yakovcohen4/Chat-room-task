@@ -29,6 +29,8 @@ function LogIn() {
         password: String(password),
       });
       if (response.status === 200) {
+        // localStorage.setItem('userName', userName);
+        sessionStorage.setItem('userName', userName);
         navigate('/chat');
       }
       //   return response; //TODO- ADD SUCCESS MESSAGE

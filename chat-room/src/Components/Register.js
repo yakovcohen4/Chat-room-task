@@ -34,6 +34,7 @@ function Register() {
         }
       );
       if (response.status === 200) {
+        sessionStorage.setItem('userName', userName);
         navigate('/chat');
       }
       //   return response; //TODO- ADD SUCCESS MESSAGE
