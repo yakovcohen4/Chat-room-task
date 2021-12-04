@@ -4,6 +4,8 @@
 body {
   // background-color: #abd9e9;
   font-family: Arial;
+  background-image: url(https://wallpapercave.com/wp/wp3296031.jpg);
+  text-align: center;
 }
 
 .chat-room {
@@ -16,7 +18,7 @@ body {
   background-color: antiquewhite;
   border-radius: 0.5em;
   width: 90%;
-  height: 50em;
+  height: 33em;
   margin: auto;
   padding: 0;
 }
@@ -41,24 +43,25 @@ body {
 .members-list {
   grid-area: 1 / 5 / 7 / 7;
   /* overflow-y: auto; */
+  border-radius: 5%;
   background-color: antiquewhite;
 }
 
-@media screen and (max-width: 1300px) {
-  .chat-room {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    // background-color: rgba(221, 209, 194, 0.4);
-    border-radius: 0.5em;
-    width: 90%;
-    height: 100%;
-    margin: auto;
-    padding: 0;
-  }
-}
+// @media screen and (max-width: 1000px) {
+//   .chat-room {
+//     display: grid;
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-template-rows: repeat(6, 1fr);
+//     grid-column-gap: 0px;
+//     grid-row-gap: 0px;
+//     // background-color: rgba(221, 209, 194, 0.4);
+//     border-radius: 0.5em;
+//     width: 90%;
+//     height: 80%;
+//     margin: auto;
+//     padding: 0;
+//   }
+// }
 // ****************************************************************
 // ****************************************************************
 // ****************************************************************
